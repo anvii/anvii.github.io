@@ -40,20 +40,13 @@
         <div id="remains"></div>
     </div>
     <script>
-        function localDate(d) {
-            if (!d) {
-                d = new Date();
-            }
-            return new Date(d.valueOf() + d.getTimezoneOffset() * 60 * 1000);
-        }
-
         const remainsElement = document.getElementById('remains');
-        let targetDate = localDate(new Date('2025-07-12T14:00:00')); // Укажите дату начала сплава
+        const targetDate = new Date('2025-07-12T10:00:00'); // Укажите дату начала сплава
 
         setInterval(updateCountdown, 1000); // Обновление каждую секунду
 
         function updateCountdown() {
-            const now = localDate();
+            const now = new Date();
             const timeDiff = targetDate - now;
 
             if (timeDiff <= 0) {
