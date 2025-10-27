@@ -41,7 +41,7 @@
     </div>
     <script>
         const remainsElement = document.getElementById('remains');
-        const targetDate = Date.UTC(2025, 11-1, 01, 7); // Укажите дату начала сплава
+        const targetDate = Date.UTC(2025, 11-1, 01, 18); // Укажите дату начала сплава
 
         setInterval(updateCountdown, 1000); // Обновление каждую секунду
 
@@ -50,7 +50,7 @@
             const timeDiff = targetDate - now;
 
             if (timeDiff <= 0) {
-                remainsElement.textContent = "Сплав начался. Поехали!!!";
+                remainsElement.textContent = "Встреча началась. Наливаем!!!";
                 return;
             }
 
@@ -59,7 +59,7 @@
             const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
-            remainsElement.textContent = `До сплава осталось ${days} дней ${hours} часов ${minutes} минут ${seconds} секунд`;
+            remainsElement.textContent = `До встречи осталось ${days} дней ${hours} часов ${minutes} минут ${seconds} секунд`;
         }
     </script>
 </body>
